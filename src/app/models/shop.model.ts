@@ -1,5 +1,7 @@
+import {Product} from "../interfaces/product";
+
 export class Shop {
-  shopItems: object;
+  shopItems: Array<Product>;
 
   constructor() {
     this.shopItems = [
