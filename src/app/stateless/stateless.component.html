@@ -1,0 +1,13 @@
+<div class="container-fluid bg-trasparent my-4 p-3" style="position: relative;">
+  <div class="row row-cols-1 row-cols-xs-2 row-cols-sm-2 row-cols-lg-4 g-3">
+    <div class="col" *ngIf="product">
+      <div class="card h-100 shadow-sm"> <img src="{{product.picture}}" class="card-img-top" alt="{{product.title}}">
+        <div class="card-body">
+          <div class="clearfix mb-3"> <span class="float-start badge rounded-pill bg-primary">{{product.title}}</span> <span class="float-end price-hp">Precio: {{product.price}}€</span> </div>
+          <h5 class="card-title">{{product.desc}}</h5>
+          <div class="text-center my-4"> <a href="#" class="btn btn-warning" >Check offer</a> </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

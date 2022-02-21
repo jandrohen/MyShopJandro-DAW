@@ -1,25 +1,10 @@
 <main role="main" class="container">
-  <ul class="list-group">
-    <li *ngFor="let boughtItem of boughtItems"
-        class="list-groupitem">{{boughtItem.title}}</li>
-  </ul>
 
    <div class="starter-template">
    <h1>Stateful</h1>
    <p class="lead">Ejemplo de componete stateful.</p>
    </div>
-  <div class="container-fluid bg-trasparent my-4 p-3" style="position: relative;">
-    <div class="row row-cols-1 row-cols-xs-2 row-cols-sm-2 row-cols-lg-4 g-3">
-      <div class="col" *ngFor="let Item of shopModel.shopItems">
-        <div class="card h-100 shadow-sm"> <img src="{{Item.picture}}" class="card-img-top" alt="{{Item.title}}">
-          <div class="card-body">
-            <div class="clearfix mb-3"> <span class="float-start badge rounded-pill bg-primary">{{Item.title}}</span> <span class="float-end price-hp">Precio: {{Item.price}}€</span> </div>
-            <h5 class="card-title">{{Item.desc}}</h5>
-            <div class="text-center my-4"> <a href="#" class="btn btn-warning" (click)="clickItem(Item)">Check offer</a> </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-   </main><!-- /.container -->
+
+  <app-stateless *ngFor="let Item of shopModel.shopItems" [product]="Item" ></app-stateless>
+   </main>
 
