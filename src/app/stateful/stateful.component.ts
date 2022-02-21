@@ -18,5 +18,7 @@ export class StatefulComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  clickItem(_product: Product): void{
+    this.boughtItems.push(_product);
+  }
 }
