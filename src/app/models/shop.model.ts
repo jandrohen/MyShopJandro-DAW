@@ -35,12 +35,6 @@ export class Shop {
         picture: 'assets/images/casual.jpg',
         price: 13.40,
       },
-      {
-        title: 'Botella de agua Aquatic Deep Blue',
-        desc: 'Botella metálica ideal para rellenar y reutilizar fácilmente, y así reducir la necesidad de botellas de agua de plástico de un solo uso.',
-        picture: 'assets/images/mar.jpg',
-        price: 11.16,
-      },
     ];
   }
 }

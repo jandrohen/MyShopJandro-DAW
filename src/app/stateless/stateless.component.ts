@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import { Product } from '../interfaces/product';
 
 @Component({
@@ -8,6 +8,7 @@ import { Product } from '../interfaces/product';
 })
 export class StatelessComponent implements OnInit {
   @Input() product!: Product;
+  @Output() productBought: EventEmitter<Product> = new EventEmitter();
   compra = 'comprar';
   disable = false;
 
@@ -17,6 +18,7 @@ export class StatelessComponent implements OnInit {
   bought() {
     this.disable = true;
     this.compra = '!Comprado!';
+    this.productBought.emit(this.product);
   }
   isDisabled() {
     return this.disable;
