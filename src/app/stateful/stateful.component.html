@@ -1,17 +1,33 @@
 <main role="main" class="container">
+
+  <div class="row">
+    <div class="col-sm-6 align-self-center">
+      <ul class="list-group">
+        <li *ngFor="let boughtItem of boughtItems"
+            class="list-group-item">{{boughtItem.title}}
+          <span class="badge bg-primary">{{boughtItem.price | currency:"&euro;"}}</span>
+        </li>
+        <li class="list-group-item disabled"><h2>Total: {{totalPrice() | currency:"&euro;"}}</h2></li>
+      </ul>
+  </div>
+    <app-confirm></app-confirm>
+  </div>
+
   <div class="starter-template">
     <h1>Stateful</h1>
     <p class="lead">Ejemplo de componete stateful.</p>
   </div>
-  <div
-    class="container-fluid bg-trasparent my-4 p-3"
-    style="position: relative"
-  >
+
+  <div class="container-fluid bg-trasparent my-4 p-3" style="position: relative">
     <div class="row row-cols-1 row-cols-xs-2 row-cols-sm-2 row-cols-lg-4 g-3">
       <app-stateless
         *ngFor="let Item of shopModel.shopItems"
         [product]="Item"
+        (productBought)="productBought($event)"
       ></app-stateless>
     </div>
   </div>
+
+
+
 </main>

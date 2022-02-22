@@ -1,0 +1,45 @@
+<!-- Button trigger modal -->
+<button
+  *ngIf="!isDisabled"
+  (click)="showModal = true"
+  type="button"
+  class="btn btn-primary"
+  data-bs-toggle="modal"
+  data-bs-target="#exampleModal"
+>
+  Confirmar compra
+</button>
+<!-- Modal -->
+<div
+  class="modal fade"
+  [ngClass]="{ show: showModal }"
+  id="exampleModal"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Confirmación de compra</h5>
+        <button
+          (click)="showModal = false"
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">¿Desea continuar con la compra?</div>
+      <div class="modal-footer">
+        <button (click)="showModal=false" type="button" class="btn bg-warning text-white" data-bs-dismiss="modal">
+          Cancelar
+        </button>
+        <a type="button" class="btn btn-primary"  href="/">Comprar</a>
+      </div>
+    </div>
+  </div>
+</div>
